@@ -1,0 +1,20 @@
+<p>
+  search2 works!
+</p>
+<p>
+  search works!
+</p>
+{{data.items}}
+<div  style="width:100%;margin-top:10px">
+  <div  style="width:100%">
+    <input type="text" style="width:50%;line-height:39px;width:50%; margin:0 23% 0 23%;border: 2px solid rgba(0,123,255,.5)" 
+     id="keyword" name="q" [formControl]="queryField" placeholder="Search2" class="form-control">
+  </div>
+  <ul class="list-group" style="width:100%;list-style-type:none; margin-top:6px;margin-left:6%;" >
+    <li class="list-group-item" *ngFor="let obj of data" style="border:1px solid grey;width: 79%; margin-left: 85px;">
+      <div *ngFor="let objItem of obj.items">
+        <img src={{objItem.snippet.thumbnails.high.url}} width="100px" height="auto">
+        <span class="title">{{objItem.snippet.title}}</span>
+      </div>
+    </li>
+  </ul>
